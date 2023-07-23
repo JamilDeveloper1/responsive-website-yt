@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100&family=DM+Serif+Display&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+body{
+    overflow-x: hidden;
+}
+
+    :root{
+    --nav-color:#333;
+    --text-color:#000;
+    --bg-color:antiquewhite;
+    --active-border: 2px dashed black;
+}
+h2{
+    font-family: 'DM Serif Display', serif;
+}
+p{
+    font-family: 'Archivo',sans-serif;
+}
+nav{
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+    border-bottom: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'DM Serif Display', serif;
+    position: fixed;
+}
+nav a.logo{
+    margin-left: 20px;
+    padding: 3px;
+    font-size: 30px;
+    color: var(--nav-color);
+}
+nav a.logo:active{
+    border: var(--active-border);
+}
+nav a.logo:hover{
+    text-decoration: underline;
+}
+nav ul{
+padding: 0 20px;
+}
+nav ul li{
+    display: inline-block;
+    padding: 10px;
+}
+nav ul li a{
+    font-size: 20px;
+    color: var(--nav-color);
+    padding: 3px;
+}
+nav ul li a:hover{
+    text-decoration: underline;
+}
+nav ul li a:active{
+    border: var(--active-border);
+}
+
+nav #check{
+    display: none;
+}
+nav .fas{
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+@media(width < 853px){
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+@media(width < 778px){
+    nav a.logo{
+        font-size: 28px;
+    }
+}
+
+
+@media(width < 768px){
+    nav ul{
+        position: fixed;
+        right: -100%;
+        bottom: 0;
+        width: 50%;
+        height: 100vh;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        border-left: 2px solid black;
+        background-color: #fff;
+        padding-top: 50px;
+        transition: .3s;
+    }
+    nav ul li a{
+        font-size: 20px;
+        display: flex;
+
+    }
+    nav .fas{
+        display: block;
+        z-index: 1;
+        padding: 0 20px;
+    }
+    nav .fas:active{
+        border: var(--active-border);
+    }
+    #check:checked~ul{
+        right: 0;
+    }
+    #check:checked ~ .fas::before{
+        content: '\f00d';
+    }
+
+}
+@media(width < 310px){
+    nav a.logo{
+        font-size: 26px;
+    }
+}
+
+
+
+/* CONTAINER IS HERE */
+
+
+.container{
+    width: 100%;
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 160px;
+    border-bottom: 2px solid black;
+    padding-bottom: 20px;
+}
+.container_txt{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.container_txt h2{
+    font-size: 48px;
+}
+.container_txt p{
+    font-size: 24px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+.container_txt p span{
+    color: var(--text-color);
+    font-weight: 800;
+}
+.container_txt .btns {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.container_txt .btns a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 2px solid black;
+    color: #000;
+    font-family: 'Archivo',sans-serif;
+    font-weight: 600;
+    transition: all .5s;
+}
+.container_txt .btns a:hover{
+    background-color: var(--text-color);
+    color: #fff;
+}
+
+.container img{
+    width: 50%;
+}
+
+@media(width < 768px){
+    .container img{
+        display: none;
+    }
+    .container_txt{
+        width: 90%;
+    }
+    .container_txt h2{
+        font-size: 30px;
+    }
+    .container_txt p{
+        font-size: 16px;
+    }
+
+}
+
+
+
+
+
+
+/* LEARN MORE IS HERE */
+
+.learn_more{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 100px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+.learn_more h2{
+    font-size: 40px;
+    text-align: center;
+    width: 60%;
+}
+.learn_more p{
+    /* width: 40%; */
+    font-size: 28px;
+    color: #000;
+    font-weight: 600;
+    text-align: center;
+}
+
+.card_container{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card{
+    width: 500px;
+    border:2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px;
+}
+.card p{
+    font-weight: 500;
+    font-size: 22px;
+}
+.card img{
+    width: 100px;
+    height: 100px;
+}
+.card p{
+    text-align: center;
+}
+
+.learn_more .end_h2{
+    width: 40%;
+    font-size: 30px;
+    text-align: center;
+}
+.learn_more a{
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Archivo',sans-serif;
+    border: 2px solid black;
+    padding: 10px;
+    font-weight: 700;
+    color: #333;
+    transition: all .3s;
+}
+.learn_more a:hover{
+    background-color: #000;
+    color: #fff;
+}
+footer{
+    width: 100%;
+    height: 200px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+footer p{
+    color: #fff;
+    font-weight: 600;
+}
+footer ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+footer ul li a{
+    color: #fff;
+    font-family: 'Archivo',sans-serif;
+    font-weight: 700;
+}
+footer ul li a:hover{
+    text-decoration: underline;
+}
+@media(width < 1013px){
+    .learn_more h2{
+        width: 90%;
+        font-size: 28px;
+    }
+    footer{
+        display: flex;
+        align-items: flex-start;
+        padding: 0 20px;
+    }
+}
+@media(width < 768px){
+    .learn_more p{
+        font-size: 24px;
+    }
+}
+@media (width < 573px) {
+    .learn_more h2{
+        font-size: 24px;
+    }
+    .learn_more p{
+        width: 60%;
+        font-size: 18px;
+    }
+    .learn_more .end_h2{
+        font-size: 24px;
+        width: 60%;
+    }
+}
+@media(width < 381px){
+    footer{
+        height: 250px;
+    }
+    footer ul {
+        display: flex;
+        flex-direction: column; 
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}
